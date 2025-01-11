@@ -1,5 +1,5 @@
-import type { GetStaticProps } from 'next'
 import type { NextPage } from 'next'
+import type { GetStaticProps } from 'next'
 import Head from 'next/head'
 import Header from '@/components/layout/Header'
 import UserCard from '../components/common/UserCard'
@@ -32,24 +32,26 @@ const Users: NextPage<UsersPageProps> = ({ initialUsers }) => {
     )
 }
 
-export const getStaticProps: GetStaticProps = async () => {
-    try {
-        const response = await fetch('https://jsonplaceholder.typicode.com/users')
-        const users: User[] = await response.json()
+export function getStaticProps() {
+    return async () => {
+        try {
+            const response = await fetch('https://jsonplaceholder.typicode.com/users')
+            const users: User[] = await response.json()
 
-        return {
-            props: {
-                initialUsers: users,
-            },
-            revalidate: 60 // Revalidate every minute
-        }
-    } catch (error) {
-        console.error('Error fetching users:', error)
-        return {
-            props: {
-                initialUsers: [],
-            },
-            revalidate: 60
+            return {
+                props: {
+                    initialUsers: users,
+                },
+                revalidate: 60
+            }
+        } catch (error) {
+            console.error('Error fetching users:', error)
+            return {
+                props: {
+                    initialUsers: [],
+                },
+                revalidate: 60
+            }
         }
     }
 }
