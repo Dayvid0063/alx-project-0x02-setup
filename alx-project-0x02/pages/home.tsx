@@ -11,7 +11,8 @@ const Home: NextPage = () => {
         {
             id: 1,
             title: 'Welcome to Our Platform',
-            content: 'This is your first post. Explore and create more!'
+            content: 'This is your first post. Explore and create more!',
+            userId: 1
         }
     ])
     const [isModalOpen, setIsModalOpen] = useState(false)
@@ -19,7 +20,8 @@ const Home: NextPage = () => {
     const handleAddPost = (postData: Omit<Post, 'id'>) => {
         const newPost: Post = {
             ...postData,
-            id: posts.length + 1
+            id: posts.length + 1,
+            userId: 1 // Default userId
         }
         setPosts([...posts, newPost])
         setIsModalOpen(false)

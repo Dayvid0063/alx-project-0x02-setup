@@ -7,7 +7,11 @@ const PostModal = ({ isOpen, onClose, onSubmit }: PostModalProps) => {
 
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault()
-        onSubmit({ title, content })
+        onSubmit({
+            title,
+            content,
+            userId: 1 // Default userId
+        })
         setTitle('')
         setContent('')
     }

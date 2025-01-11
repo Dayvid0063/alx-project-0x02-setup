@@ -15,7 +15,7 @@ const Header = () => {
                     <Link href="/home" className="text-xl font-bold text-gray-900">
                         ALX Project 2
                     </Link>
-                    <div className="space-x-4">
+                    <div className="space-x-6">
                         <Link
                             href="/home"
                             className={`${isActiveLink('/home')} hover:text-blue-800`}
@@ -27,6 +27,18 @@ const Header = () => {
                             className={`${isActiveLink('/about')} hover:text-blue-800`}
                         >
                             About
+                        </Link>
+                        <Link
+                            href="/posts"
+                            className={`${isActiveLink('/posts')} hover:text-blue-800`}
+                        >
+                            Posts
+                        </Link>
+                        <Link
+                            href="/users"
+                            className={`${isActiveLink('/users')} hover:text-blue-800`}
+                        >
+                            Users
                         </Link>
                     </div>
                 </div>
