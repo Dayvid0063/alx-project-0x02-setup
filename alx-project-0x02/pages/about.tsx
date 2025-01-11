@@ -1,7 +1,7 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
-import Header from '../components/layout/Header'
-import Button from '../components/common/Button'
+import Header from '@/components/layout/Header'
+import Button from '@/components/common/Button'
 
 const About: NextPage = () => {
     return (

@@ -1,9 +1,9 @@
 import { useState } from 'react'
 import type { NextPage } from 'next'
 import Head from 'next/head'
-import Header from '../components/layout/Header'
-import Card from '../components/common/Card'
-import PostModal from '../components/common/PostModal'
+import Header from '@/components/layout/Header'
+import Card from '@/components/common/Card'
+import PostModal from '@/components/common/PostModal'
 import { Post } from '../interfaces'
 
 const Home: NextPage = () => {
@@ -21,7 +21,7 @@ const Home: NextPage = () => {
         const newPost: Post = {
             ...postData,
             id: posts.length + 1,
-            userId: 1 // Default userId
+            userId: 1
         }
         setPosts([...posts, newPost])
         setIsModalOpen(false)
